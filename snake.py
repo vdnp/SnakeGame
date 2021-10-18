@@ -11,7 +11,6 @@ height = 500
 cols = 25
 rows = 20
 
-
 class cube():
     rows = 20
     w = 500
