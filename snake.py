@@ -18,7 +18,7 @@ class cube():
     def __init__(self, start, dirnx=1, dirny=0, color=(255,0,0)):
         self.pos = start
         self.dirnx = dirnx
-        self.dirny = dirny # "L", "R", "U", "D"
+        self.dirny = dirny
         self.color = color
 
     def move(self, dirnx, dirny):
@@ -48,7 +48,6 @@ class snake():
     turns = {}
     
     def __init__(self, color, pos):
-        #pos is given as coordinates on the grid ex (1,5)
         self.color = color
         self.head = cube(pos)
         self.body.append(self.head)
@@ -122,7 +121,6 @@ class snake():
                 c.draw(surface)
 
 
-
 def redrawWindow():
     global win
     win.fill((0,0,0))
@@ -131,7 +129,6 @@ def redrawWindow():
     snack.draw(win)
     pygame.display.update()
     pass
-
 
 
 def drawGrid(w, rows, surface):
@@ -147,7 +144,6 @@ def drawGrid(w, rows, surface):
         pygame.draw.line(surface, (255,255,255), (0, y),(w,y))
     
 
-
 def randomSnack(rows, item):
     positions = item.body
 
@@ -160,7 +156,6 @@ def randomSnack(rows, item):
                break
 
     return (x,y)
-
 
 def main():
     global s, snack, win
